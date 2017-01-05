@@ -1,0 +1,42 @@
+[
+  {
+    "email":"robert@bank.com",
+    "password":"robert",
+    "display_name":"Robert Chaves"
+  },
+  {
+    "email":"susan@bank.com",
+    "password":"susan",
+    "display_name":"Susan"
+  },
+  {
+    "email":"anil@bank.com",
+    "password":"90a66977",
+    "display_name":"Anil X.0.GH"
+  },
+  {
+    "email":"ellie.x.0.gh@bank.com",
+    "password":"a2953da3",
+    "display_name":"Ellie X.0.GH"
+  },
+  {
+    "email":"robert.y.9.gh@bank.com",
+    "password":"c9a641df",
+    "display_name":"Robert Y.9.GH"
+  },
+  {
+    "email":"susan.y.9.gh@bank.com",
+    "password":"b7c78269",
+    "display_name":"Susan Y.9.GH"
+  },
+  {
+    "email":"anil.y.9.gh@bank.com",
+    "password":"fec9556f",
+    "display_name":"Anil Y.9.GH"
+  },
+  {
+    "email":"ellie.y.9.gh@bank.com",
+    "password":"6f821300",
+    "display_name":"Ellie Y.9.GH"
+  }
+]
