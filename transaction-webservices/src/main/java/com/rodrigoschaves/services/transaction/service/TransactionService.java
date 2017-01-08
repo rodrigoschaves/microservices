@@ -3,6 +3,7 @@ package com.rodrigoschaves.services.transaction.service;
 import com.rodrigoschaves.services.transaction.domain.Transaction;
 import com.rodrigoschaves.services.transaction.domain.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,11 +25,16 @@ public class TransactionService {
 		return this.repository.findAll();
 	}
 
-	public Transaction findOne(String id){
+	public Transaction findOne(String id) {
+
 		return this.repository.findOne(id);
 	}
 
 	public void importData(List<Transaction> users) {
 		this.repository.insert(users);
+	}
+
+	public List<Transaction> findByAccount(String id) {
+		return this.repository.findAll(Example.of(new Transaction(id)));
 	}
 }

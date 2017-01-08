@@ -17,6 +17,9 @@ public class Transaction extends ResourceSupport {
 	@Id
 	private ObjectId transactionId;
 
+	@JsonProperty("account_id")
+	private String accountId;
+
 	private Date date;
 
 	private Double amount;
@@ -29,6 +32,10 @@ public class Transaction extends ResourceSupport {
 
 	@JsonProperty("currency_code")
 	private String currencyCode;
+
+	public Transaction(String accountId) {
+		this.accountId = accountId;
+	}
 
 	public ObjectId getTransactionId() {
 		return transactionId;
@@ -84,5 +91,13 @@ public class Transaction extends ResourceSupport {
 
 	public void setCurrencyCode(String currencyCode) {
 		this.currencyCode = currencyCode;
+	}
+
+	public String getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(String accountId) {
+		this.accountId = accountId;
 	}
 }

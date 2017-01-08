@@ -3,6 +3,7 @@ package com.rodrigoschaves.services.transaction.web;
 import com.rodrigoschaves.services.transaction.domain.Transaction;
 import com.rodrigoschaves.services.transaction.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.hateoas.Link;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -35,7 +36,11 @@ public class TransactionController {
 	public Transaction userById(@PathVariable("transactionId") String id) {
 		return service.findOne(id);
 	}
-	
+
+	@RequestMapping(method = RequestMethod.GET, path = "/search")
+	public List<Transaction> search(@RequestHeader("accountId") String id) {
+		return service.findByAccount(id);
+	}
 
 	@RequestMapping(method = RequestMethod.POST)
 	@ResponseStatus(value = HttpStatus.OK)
