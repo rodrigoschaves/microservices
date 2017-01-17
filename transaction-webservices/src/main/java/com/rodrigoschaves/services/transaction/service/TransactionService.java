@@ -34,7 +34,7 @@ public class TransactionService {
 		this.repository.insert(users);
 	}
 
-	public List<Transaction> findByAccount(String id) {
-		return this.repository.findAll(Example.of(new Transaction(id)));
+	public List<Transaction> findByAccount(String accountId) {
+		return this.repository.findByAccountId(accountId);
 	}
 }

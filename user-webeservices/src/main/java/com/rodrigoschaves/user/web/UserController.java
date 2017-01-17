@@ -5,6 +5,7 @@ import com.rodrigoschaves.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,7 +32,12 @@ public class UserController {
 		return users;
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(method = RequestMethod.GET, value = "{userId}")
+	public User findById(@PathVariable("userId") String userId) {
+		return service.findById(userId);
+	}
+
+	@RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value = HttpStatus.OK)
 	public void importData(@RequestBody List<User> users) {
 		service.importData(users);

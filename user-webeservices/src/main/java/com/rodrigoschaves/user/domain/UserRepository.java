@@ -1,5 +1,6 @@
 package com.rodrigoschaves.user.domain;
 
+import org.springframework.data.domain.Example;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,4 +9,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserRepository extends MongoRepository<User, String> {
+	User findByUserId(String userId);
 }

@@ -1,5 +1,6 @@
 package com.rodrigoschaves.user.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -14,11 +15,13 @@ import java.io.Serializable;
 public class User extends ResourceSupport {
 
 	@Id
-	private ObjectId userId;
+	private ObjectId id;
 
+	@JsonProperty("user_id")
+	private String userId;
+
+	@JsonProperty("user_name")
 	private String username;
-
-	private String password;
 
 	private boolean enabled;
 
@@ -30,14 +33,6 @@ public class User extends ResourceSupport {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public boolean isEnabled() {
 		return enabled;
 	}
@@ -46,11 +41,15 @@ public class User extends ResourceSupport {
 		this.enabled = enabled;
 	}
 
-	public ObjectId getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(ObjectId userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public void setId(ObjectId id) {
+		this.id = id;
 	}
 }

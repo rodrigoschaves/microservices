@@ -3,6 +3,7 @@ package com.rodrigoschaves.user.service;
 import com.rodrigoschaves.user.domain.User;
 import com.rodrigoschaves.user.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,5 +27,9 @@ public class UserService {
 
 	public void importData(List<User> users) {
 		this.repository.insert(users);
+	}
+
+	public User findById(String userId) {
+		return this.repository.findByUserId(userId);
 	}
 }

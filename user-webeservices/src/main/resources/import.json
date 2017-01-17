@@ -1,26 +1,22 @@
 [
   {
     "user_id": "1",
-    "username": "roberto@bank.com",
-    "password": "roberto",
+    "user_name": "roberto@bank.com",
     "enabled": true
   },
   {
     "user_id": "2",
-    "username": "bruna@bank.com",
-    "password": "bruna",
+    "user_name": "bruna@bank.com",
     "enabled": true
   },
   {
     "user_id": "3",
-    "username": "debora@bank.com",
-    "password": "debora",
+    "user_name": "debora@bank.com",
     "enabled": true
   },
   {
     "user_id": "4",
-    "username": "rodrigo@bank.com",
-    "password": "rodrigo",
+    "user_name": "rodrigo@bank.com",
     "enabled": true
   }
 ]

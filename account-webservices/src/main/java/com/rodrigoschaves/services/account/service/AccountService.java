@@ -35,8 +35,6 @@ public class AccountService {
 	}
 
 	public List<Account> findByUser(String userId) {
-		Account account = new Account();
-		account.setUserId(userId);
-		return this.repository.findAll(Example.of(account));
+		return this.repository.findByUserId(userId);
 	}
 }
